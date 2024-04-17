@@ -14,14 +14,15 @@ enum AllPokemonListServiceError: Error {
 
 class AllPokemonListService {
     let client = AllPokemonListHTTPClient()
-    func loadAllPokemonList(completion: @escaping (Result<AllPokemonListDTO, AllPokemonListServiceError>) -> Void) {
+    func loadAllPokemonList(completion: @escaping (Result<AllPokemonList, AllPokemonListServiceError>) -> Void) {
         client.reuestAllPokemonList { result in
             switch result {
             case let .success((data, reponse)): // tuple (Data, HTTPURLResponse) -> type
                 // do success behavior
                 do {
                     let allPokemonListDTO = try JSONDecoder().decode(AllPokemonListDTO.self, from: data)
-                    completion(.success(allPokemonListDTO))
+                    let allPokemonList = AllPokemonList(from: allPokemonListDTO)
+                    completion(.success(allPokemonList))
                 } catch {
                     completion(.failure(.JSONParsingError))
                 }
