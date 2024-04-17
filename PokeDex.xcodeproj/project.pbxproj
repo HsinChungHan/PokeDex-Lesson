@@ -17,6 +17,8 @@
 		D13E247F2BCF5F3800628F7D /* PokeDexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13E247E2BCF5F3800628F7D /* PokeDexUITests.swift */; };
 		D13E24812BCF5F3800628F7D /* PokeDexUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13E24802BCF5F3800628F7D /* PokeDexUITestsLaunchTests.swift */; };
 		D1E058342BCF7042006F965F /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058332BCF7042006F965F /* RequestType.swift */; };
+		D1E058382BCF7270006F965F /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058372BCF7270006F965F /* UIView+SnapKit.swift */; };
+		D1E0583D2BCF7373006F965F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D1E0583C2BCF7373006F965F /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		D13E247E2BCF5F3800628F7D /* PokeDexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexUITests.swift; sourceTree = "<group>"; };
 		D13E24802BCF5F3800628F7D /* PokeDexUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D1E058332BCF7042006F965F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		D1E058372BCF7270006F965F /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E0583D2BCF7373006F965F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				D13E24732BCF5F3800628F7D /* PokeDexTests */,
 				D13E247D2BCF5F3800628F7D /* PokeDexUITests */,
 				D13E245B2BCF5F3700628F7D /* Products */,
+				D1E058392BCF72AE006F965F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +109,7 @@
 				D13E245D2BCF5F3700628F7D /* AppDelegate.swift */,
 				D13E245F2BCF5F3700628F7D /* SceneDelegate.swift */,
 				D13E24612BCF5F3700628F7D /* ViewController.swift */,
+				D1E058352BCF7122006F965F /* AutolayoutHelpers */,
 				D1E058322BCF7030006F965F /* NetworkModule */,
 				D13E24632BCF5F3700628F7D /* Main.storyboard */,
 				D13E24662BCF5F3800628F7D /* Assets.xcassets */,
@@ -138,6 +144,21 @@
 			path = NetworkModule;
 			sourceTree = "<group>";
 		};
+		D1E058352BCF7122006F965F /* AutolayoutHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1E058372BCF7270006F965F /* UIView+SnapKit.swift */,
+			);
+			path = AutolayoutHelpers;
+			sourceTree = "<group>";
+		};
+		D1E058392BCF72AE006F965F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +175,9 @@
 			dependencies = (
 			);
 			name = PokeDex;
+			packageProductDependencies = (
+				D1E0583C2BCF7373006F965F /* SnapKit */,
+			);
 			productName = PokeDex;
 			productReference = D13E245A2BCF5F3700628F7D /* PokeDex.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +250,9 @@
 				Base,
 			);
 			mainGroup = D13E24512BCF5F3700628F7D;
+			packageReferences = (
+				D1E058362BCF724E006F965F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D13E245B2BCF5F3700628F7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,6 +300,7 @@
 				D13E245E2BCF5F3700628F7D /* AppDelegate.swift in Sources */,
 				D13E24602BCF5F3700628F7D /* SceneDelegate.swift in Sources */,
 				D1E058342BCF7042006F965F /* RequestType.swift in Sources */,
+				D1E058382BCF7270006F965F /* UIView+SnapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +647,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D1E058362BCF724E006F965F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D1E0583C2BCF7373006F965F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1E058362BCF724E006F965F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D13E24522BCF5F3700628F7D /* Project object */;
 }
