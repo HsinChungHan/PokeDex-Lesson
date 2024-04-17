@@ -21,6 +21,7 @@
 		D1E0583D2BCF7373006F965F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D1E0583C2BCF7373006F965F /* SnapKit */; };
 		D1E058442BCF77CA006F965F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058432BCF77CA006F965F /* HTTPClient.swift */; };
 		D1E058462BCF78B9006F965F /* AllPokemonListHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */; };
+		D1E058542BCFA15F006F965F /* AllPokemonListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058532BCFA15F006F965F /* AllPokemonListDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D1E058372BCF7270006F965F /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 		D1E058432BCF77CA006F965F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonListHTTPClient.swift; sourceTree = "<group>"; };
+		D1E058532BCFA15F006F965F /* AllPokemonListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonListDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		D1E0583E2BCF74F1006F965F /* AllPokemonListPage */ = {
 			isa = PBXGroup;
 			children = (
+				D1E058502BCFA06E006F965F /* Model */,
 			);
 			path = AllPokemonListPage;
 			sourceTree = "<group>";
@@ -178,6 +181,14 @@
 				D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		D1E058502BCFA06E006F965F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1E058532BCFA15F006F965F /* AllPokemonListDTO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				D13E24602BCF5F3700628F7D /* SceneDelegate.swift in Sources */,
 				D1E058442BCF77CA006F965F /* HTTPClient.swift in Sources */,
 				D1E058342BCF7042006F965F /* RequestType.swift in Sources */,
+				D1E058542BCFA15F006F965F /* AllPokemonListDTO.swift in Sources */,
 				D1E058382BCF7270006F965F /* UIView+SnapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
