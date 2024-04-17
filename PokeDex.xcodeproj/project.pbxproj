@@ -20,6 +20,7 @@
 		D1E058382BCF7270006F965F /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058372BCF7270006F965F /* UIView+SnapKit.swift */; };
 		D1E0583D2BCF7373006F965F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D1E0583C2BCF7373006F965F /* SnapKit */; };
 		D1E058442BCF77CA006F965F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058432BCF77CA006F965F /* HTTPClient.swift */; };
+		D1E058462BCF78B9006F965F /* AllPokemonListHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		D1E058332BCF7042006F965F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		D1E058372BCF7270006F965F /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 		D1E058432BCF77CA006F965F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonListHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,14 @@
 			children = (
 			);
 			path = AllPokemonListPage;
+			sourceTree = "<group>";
+		};
+		D1E0584C2BCF9F58006F965F /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E058462BCF78B9006F965F /* AllPokemonListHTTPClient.swift in Sources */,
 				D13E24622BCF5F3700628F7D /* ViewController.swift in Sources */,
 				D13E245E2BCF5F3700628F7D /* AppDelegate.swift in Sources */,
 				D13E24602BCF5F3700628F7D /* SceneDelegate.swift in Sources */,

@@ -12,7 +12,6 @@ enum HTTPClientError: Error {
     case ResponseAndDataNilError
 }
 
-
 class HTTPClient {
     let urlSession = URLSession.shared
                                                                                 
