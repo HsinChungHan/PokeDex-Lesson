@@ -175,7 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				D1E058502BCFA06E006F965F /* Model */,
+				D1E0584E2BCF9F71006F965F /* ViewModelLayer */,
 				D1E0584D2BCF9F68006F965F /* ServiceLayer */,
+				D1E0584C2BCF9F58006F965F /* NetworkLayer */,
 			);
 			path = AllPokemonListPage;
 			sourceTree = "<group>";
@@ -194,6 +196,14 @@
 				D1E058552BCFA377006F965F /* AllPokemonListService.swift */,
 			);
 			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		D1E0584E2BCF9F71006F965F /* ViewModelLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D1E058592BCFAC9C006F965F /* AllPokemonListViewModel.swift */,
+			);
+			path = ViewModelLayer;
 			sourceTree = "<group>";
 		};
 		D1E058502BCFA06E006F965F /* Model */ = {
@@ -344,6 +354,7 @@
 			files = (
 				D1E058462BCF78B9006F965F /* AllPokemonListHTTPClient.swift in Sources */,
 				D13E24622BCF5F3700628F7D /* ViewController.swift in Sources */,
+				D1E0585A2BCFAC9C006F965F /* AllPokemonListViewModel.swift in Sources */,
 				D13E245E2BCF5F3700628F7D /* AppDelegate.swift in Sources */,
 				D13E24602BCF5F3700628F7D /* SceneDelegate.swift in Sources */,
 				D1E058442BCF77CA006F965F /* HTTPClient.swift in Sources */,
