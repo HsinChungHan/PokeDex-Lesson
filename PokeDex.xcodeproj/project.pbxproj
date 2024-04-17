@@ -22,6 +22,7 @@
 		D1E058442BCF77CA006F965F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058432BCF77CA006F965F /* HTTPClient.swift */; };
 		D1E058462BCF78B9006F965F /* AllPokemonListHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */; };
 		D1E058542BCFA15F006F965F /* AllPokemonListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058532BCFA15F006F965F /* AllPokemonListDTO.swift */; };
+		D1E058562BCFA377006F965F /* AllPokemonListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E058552BCFA377006F965F /* AllPokemonListService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D1E058432BCF77CA006F965F /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonListHTTPClient.swift; sourceTree = "<group>"; };
 		D1E058532BCFA15F006F965F /* AllPokemonListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonListDTO.swift; sourceTree = "<group>"; };
+		D1E058552BCFA377006F965F /* AllPokemonListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonListService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E058502BCFA06E006F965F /* Model */,
+				D1E0584D2BCF9F68006F965F /* ServiceLayer */,
 			);
 			path = AllPokemonListPage;
 			sourceTree = "<group>";
@@ -181,6 +184,14 @@
 				D1E058452BCF78B9006F965F /* AllPokemonListHTTPClient.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		D1E0584D2BCF9F68006F965F /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D1E058552BCFA377006F965F /* AllPokemonListService.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		D1E058502BCFA06E006F965F /* Model */ = {
@@ -336,6 +347,7 @@
 				D1E058342BCF7042006F965F /* RequestType.swift in Sources */,
 				D1E058542BCFA15F006F965F /* AllPokemonListDTO.swift in Sources */,
 				D1E058382BCF7270006F965F /* UIView+SnapKit.swift in Sources */,
+				D1E058562BCFA377006F965F /* AllPokemonListService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
