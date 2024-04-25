@@ -68,19 +68,33 @@ extension AllPokemonListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Step4: Configure cell
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AllPokemonListCell.self), for: indexPath) as! AllPokemonListCell
-//        let name = viewModel.allPokemonNames[indexPath.row]
-//        let cellModel = AllPokemonListCellModel.init(name: name)
         let cellModel = viewModel.makeCellModel(with: indexPath)
         cell.configureCell(with: cellModel)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
 }
 
 extension AllPokemonListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.setupPokemonNameForInfoPage(with: indexPath)
+        let pokemonInfoViewController = PokemonInfoPageViewController()
+        pokemonInfoViewController.dataSource = self
+        present(pokemonInfoViewController, animated: true)
+    }
 }
 
-
+extension AllPokemonListViewController: PokemonInfoPageViewControllerDataSource {
+    var pokemonName: String {
+        guard let name = viewModel.pokemonNameForInfoPage else {
+            fatalError("PokemonNameForInfoPage should not be nil!")
+        }
+        return name
+    }
+}
 
 
 
