@@ -13,17 +13,31 @@ protocol AllPokemonListViewModelDelegate: AnyObject {
 }
 
 class AllPokemonListViewModel {
-    weak var deleagte: AllPokemonListViewModelDelegate?
+    weak var delegate: AllPokemonListViewModelDelegate?
+    var allPokemonNames = [String]()
     let service = AllPokemonListService()
+}
+
+// MARK: - Internal Methods and Network Service
+extension AllPokemonListViewModel {
     func loadAllPokemonList() {
         service.loadAllPokemonList { [weak self] result in
             guard let self else { return }
             switch result {
             case let .success(allPokemonList):
-                self.deleagte?.allPokemonListViewModel(self, allPokemonListDidUpdate: allPokemonList)
+                self.allPokemonNames = allPokemonList.pokemonNames
+                self.delegate?.allPokemonListViewModel(self, allPokemonListDidUpdate: allPokemonList)
             case let .failure(error):
-                self.deleagte?.allPokemonListViewModel(self, allPokemonListErrorDidUpdate: error)
+                self.delegate?.allPokemonListViewModel(self, allPokemonListErrorDidUpdate: error)
             }
         }
     }
+    
+    func makeCellModel(with indexPath: IndexPath) -> AllPokemonListCellModel {
+        let name = allPokemonNames[indexPath.row]
+        return .init(name: name)
+    }
 }
+
+
+
