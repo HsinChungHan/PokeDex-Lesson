@@ -15,6 +15,7 @@ protocol AllPokemonListViewModelDelegate: AnyObject {
 class AllPokemonListViewModel {
     weak var delegate: AllPokemonListViewModelDelegate?
     var allPokemonNames = [String]()
+    var pokemonNameForInfoPage: String?
     let service = AllPokemonListService()
 }
 
@@ -36,6 +37,11 @@ extension AllPokemonListViewModel {
     func makeCellModel(with indexPath: IndexPath) -> AllPokemonListCellModel {
         let name = allPokemonNames[indexPath.row]
         return .init(name: name)
+    }
+    
+    func setupPokemonNameForInfoPage(with indexPath: IndexPath) {
+        let name = allPokemonNames[indexPath.row]
+        pokemonNameForInfoPage = name
     }
 }
 
