@@ -13,10 +13,6 @@ class AllPokemonListViewController: UIViewController {
     let viewModel = AllPokemonListViewModel()
     lazy var pokemonListTableView = makeTableView()
     
-    // TODO: - Should be removed
-    let pokemonInfoHTTPClient = PokemonInfoHTTPClient()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(pokemonListTableView)
@@ -25,16 +21,6 @@ class AllPokemonListViewController: UIViewController {
         viewModel.delegate = self
         // Step1: Use viewmodel load pokemon list
         viewModel.loadAllPokemonList()
-        
-        // TODO: - Should be removed
-        pokemonInfoHTTPClient.requestPokemonImage(with: "1") { result in
-            switch result {
-            case let .success(data):
-                print(data)
-            case .failure(_):
-                return
-            }
-        }
     }
 }
 
