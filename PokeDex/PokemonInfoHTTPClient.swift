@@ -19,16 +19,6 @@ class PokemonInfoHTTPClient: HTTPClient {
     }
 }
 
-
-/*
- https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/{id}.png
- 這隻可以拿到 pokemon 的圖片，透過不同的 id
- var headers: [String : String] {
-         [
-             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"
-         ]
-     }
- */
 fileprivate extension PokemonInfoHTTPClient {
     // https://pokeapi.co/api/v2/pokemon/{name}
     func makePokemonInfoRequest(with name: String) -> RequestType {
@@ -37,12 +27,14 @@ fileprivate extension PokemonInfoHTTPClient {
         return RequestType(httpMethod: .GET, domainURL: url, path: path)
     }
     
+    
     var headers: [String : String] {
         [
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"
         ]
     }
     
+    // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/{id}.png
     func makePokemonImageRequest(with id: String) -> RequestType {
         let url = URL.init(string: "https://raw.githubusercontent.com")!
         let path = "/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/\(id).png"
