@@ -27,7 +27,7 @@ class AllPokemonListViewController: UIViewController {
         viewModel.loadAllPokemonList()
         
         // TODO: - Should be removed
-        pokemonInfoHTTPClient.reuestPokemonImage(with: "1") { result in
+        pokemonInfoHTTPClient.requestPokemonImage(with: "1") { result in
             switch result {
             case let .success(data):
                 print(data)

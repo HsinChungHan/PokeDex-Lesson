@@ -9,11 +9,11 @@ import Foundation
 
 class PokemonInfoHTTPClient: HTTPClient {
     func requestPokemonInfo(with name: String, completion: @escaping (Result<(Data, HTTPURLResponse), HTTPClientError>) -> Void) {
-            let requestType = makePokemonInfoRequest(with: name)
-            request(with: requestType, completion: completion)
-        }
+        let requestType = makePokemonInfoRequest(with: name)
+        request(with: requestType, completion: completion)
+    }
     
-    func reuestPokemonImage(with id: String, completion: @escaping (Result<(Data, HTTPURLResponse), HTTPClientError>) -> Void) {
+    func requestPokemonImage(with id: String, completion: @escaping (Result<(Data, HTTPURLResponse), HTTPClientError>) -> Void) {
         let requestType = makePokemonImageRequest(with: id)
         request(with: requestType, completion: completion)
     }
