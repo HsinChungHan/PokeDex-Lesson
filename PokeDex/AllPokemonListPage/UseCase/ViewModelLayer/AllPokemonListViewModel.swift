@@ -14,19 +14,28 @@ protocol AllPokemonListViewModelDelegate: AnyObject {
 
 class AllPokemonListViewModel {
     weak var delegate: AllPokemonListViewModelDelegate?
-    var allPokemonNames = [String]()
+    var allPokemonListCellModels = [AllPokemonListCellModel]()
     var pokemonNameForInfoPage: String?
     let service = AllPokemonListService()
+    // flag
+    var isLoadingAndPresentingNewPokemonList = false
 }
 
 // MARK: - Internal Methods and Network Service
 extension AllPokemonListViewModel {
     func loadAllPokemonList() {
+        if isLoadingAndPresentingNewPokemonList {
+            // 代表現在正在 loading data
+            return
+        }
+        isLoadingAndPresentingNewPokemonList = true
         service.loadAllPokemonList { [weak self] result in
             guard let self else { return }
             switch result {
             case let .success(allPokemonList):
-                self.allPokemonNames = allPokemonList.pokemonNames
+                for name in allPokemonList.pokemonNames {
+                    self.allPokemonListCellModels.append(AllPokemonListCellModel.init(name: name))
+                }
                 self.delegate?.allPokemonListViewModel(self, allPokemonListDidUpdate: allPokemonList)
             case let .failure(error):
                 self.delegate?.allPokemonListViewModel(self, allPokemonListErrorDidUpdate: error)
@@ -34,13 +43,8 @@ extension AllPokemonListViewModel {
         }
     }
     
-    func makeCellModel(with indexPath: IndexPath) -> AllPokemonListCellModel {
-        let name = allPokemonNames[indexPath.row]
-        return .init(name: name)
-    }
-    
     func setupPokemonNameForInfoPage(with indexPath: IndexPath) {
-        let name = allPokemonNames[indexPath.row]
+        let name = allPokemonListCellModels[indexPath.row].name
         pokemonNameForInfoPage = name
     }
 }

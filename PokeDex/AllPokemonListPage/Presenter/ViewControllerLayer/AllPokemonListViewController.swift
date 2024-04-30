@@ -25,14 +25,16 @@ class AllPokemonListViewController: UIViewController {
     }
 }
 
+
 extension AllPokemonListViewController: AllPokemonListViewModelDelegate {
     func allPokemonListViewModel(_ allPokemonListViewModel: AllPokemonListViewModel, allPokemonListDidUpdate allPokemonList: AllPokemonList) {
         // Step3: Reload TableView
         pokemonListTableView.reloadData()
+        viewModel.isLoadingAndPresentingNewPokemonList = false
     }
     
     func allPokemonListViewModel(_ allPokemonListViewModel: AllPokemonListViewModel, allPokemonListErrorDidUpdate error: AllPokemonListServiceError) {
-        
+        viewModel.isLoadingAndPresentingNewPokemonList = false
     }
 }
 
@@ -49,19 +51,30 @@ extension AllPokemonListViewController {
 extension AllPokemonListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Step3: Renew the number of rows
-        return viewModel.allPokemonNames.count
+        return viewModel.allPokemonListCellModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Step4: Configure cell
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AllPokemonListCell.self), for: indexPath) as! AllPokemonListCell
-        let cellModel = viewModel.makeCellModel(with: indexPath)
+        let cellModel = viewModel.allPokemonListCellModels[indexPath.row]
         cell.configureCell(with: cellModel)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+    
+    // 滑到底了
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 取得當前 tableView 的最後一個 section 的最後一個 row(tableView 的最底下的 row)
+        let lastSectionIndex =  tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        // 判斷最後一個 cell 是否有要被顯示
+        if indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex {
+            viewModel.loadAllPokemonList()
+        }
     }
 }
 
