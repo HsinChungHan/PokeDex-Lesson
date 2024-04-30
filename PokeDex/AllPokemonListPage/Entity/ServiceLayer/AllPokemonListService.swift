@@ -12,7 +12,7 @@ enum AllPokemonListServiceError: Error {
     case NetworkError
 }
 
-class AllPokemonListService {
+class AllPokemonListService {    
     let client = AllPokemonListHTTPClient()
     func loadAllPokemonList(completion: @escaping (Result<AllPokemonList, AllPokemonListServiceError>) -> Void) {
         client.reuestAllPokemonList { result in
