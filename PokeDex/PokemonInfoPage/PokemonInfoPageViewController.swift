@@ -42,6 +42,7 @@ class PokemonInfoPageViewController: UIViewController {
         viewModel.deleagte = self
         let name = _dataSource.pokemonName
         viewModel.loadPokemonInfoAndImage(with: name)
+        title = name
     }
 }
  

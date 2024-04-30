@@ -16,6 +16,7 @@ class AllPokemonListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(pokemonListTableView)
+        title = "Pokemon List"
         pokemonListTableView.backgroundColor = .red
         pokemonListTableView.fillWithPadding()
         viewModel.delegate = self
@@ -69,7 +70,8 @@ extension AllPokemonListViewController: UITableViewDelegate {
         viewModel.setupPokemonNameForInfoPage(with: indexPath)
         let pokemonInfoViewController = PokemonInfoPageViewController()
         pokemonInfoViewController.dataSource = self
-        present(pokemonInfoViewController, animated: true)
+        navigationController?.pushViewController(pokemonInfoViewController, animated: true)
+//        present(pokemonInfoViewController, animated: true)
     }
 }
 

@@ -191,6 +191,32 @@
 			path = ModelLayer;
 			sourceTree = "<group>";
 		};
+		D1B2CC382BDA2F9A00F6AA17 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D16C1F2B2BD3717600EDA7D4 /* ViewLayer */,
+				D1E0584F2BCF9F92006F965F /* ViewControllerLayer */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D1B2CC392BDA2FB600F6AA17 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				D1E0584E2BCF9F71006F965F /* ViewModelLayer */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D1B2CC3A2BDA2FFA00F6AA17 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D1E058502BCFA06E006F965F /* Model */,
+				D1E0584D2BCF9F68006F965F /* ServiceLayer */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		D1E058322BCF7030006F965F /* NetworkModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,13 +244,10 @@
 		D1E0583E2BCF74F1006F965F /* AllPokemonListPage */ = {
 			isa = PBXGroup;
 			children = (
+				D1B2CC382BDA2F9A00F6AA17 /* Presenter */,
+				D1B2CC392BDA2FB600F6AA17 /* UseCase */,
+				D1B2CC3A2BDA2FFA00F6AA17 /* Entity */,
 				D1E0584C2BCF9F58006F965F /* NetworkLayer */,
-				D16C1F2B2BD3717600EDA7D4 /* ViewLayer */,
-				D16C1F292BD36FFA00EDA7D4 /* AllPokemonListViewController.swift */,
-				D1E058502BCFA06E006F965F /* Model */,
-				D1E0584F2BCF9F92006F965F /* ViewControllerLayer */,
-				D1E0584E2BCF9F71006F965F /* ViewModelLayer */,
-				D1E0584D2BCF9F68006F965F /* ServiceLayer */,
 			);
 			path = AllPokemonListPage;
 			sourceTree = "<group>";
@@ -256,6 +279,7 @@
 		D1E0584F2BCF9F92006F965F /* ViewControllerLayer */ = {
 			isa = PBXGroup;
 			children = (
+				D16C1F292BD36FFA00EDA7D4 /* AllPokemonListViewController.swift */,
 			);
 			path = ViewControllerLayer;
 			sourceTree = "<group>";
